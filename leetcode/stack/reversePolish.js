@@ -35,6 +35,7 @@ var evalRPN = function(tokens) {
     }
     return stack.pop();
 };
+// test code
 
-let i=["2", "1", "+", "3", "*"]
-console.log(evalRPN(i))
+// let i=["2", "1", "+", "3", "*"]
+// console.log(evalRPN(i))
