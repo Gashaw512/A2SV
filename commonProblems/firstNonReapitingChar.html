@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The First Non Reapiting Character In The Given String</title>
-</head>ilujhhyjkjhuhhh
+</head>
 <body>
     <script>
         function getTheFirstNonReapitingChar(str) {
-            let stri = ' ', index = -1;
+            let stri = ' ', index = 0;
+            str=str.trim()
+            if(str=='')
+            return "The String is empty"
             for (let i of str) {
-                 console.log(i)
                 console.log(str.split(i))
                 if (str.split(i).length - 1 === 1) {
                     stri = i;
@@ -20,17 +22,18 @@
                 } else
                     index += 1;
             }
-            console.log(index)
-            if(index===1){
-                document.write("Either all Character are reapiting or the String is empty")
+
+            if(index !=str.length){
+               return(`Letter ${stri} @ position ${index+1} is the first letter that appears once in the string` )
             }else{
-                document.write(`The First Non Reapiting Character is ${stri}`)
+                return ("All character repeated")
             }
         }
 
         // driver Code
-        let str= 'GashawKidanuG'
-        getTheFirstNonReapitingChar(str)
+        let str= '                          ggaabbmns'
+        // let str ="      ";
+       document.write( getTheFirstNonReapitingChar(str)) 
     </script>
 </body>
 
