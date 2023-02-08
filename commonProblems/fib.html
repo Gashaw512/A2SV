@@ -15,11 +15,8 @@
             else if (num == 0)
                 return [0]
             else {
-                // recursivelly call the function until n==1 0r n==0
                 total = recur(num - 1);
-
                 total.push(total[total.length - 1] + total[total.length - 2]);
-               
                 return total;
             }
         }
