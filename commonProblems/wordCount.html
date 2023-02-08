@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Word Count</title>
+</head>
+
+<body>
+    <script>
+        function countWord(word) {
+            let a = word.split(' ')
+            let count = 0;
+            for (let i = 0; i < a.length; i++) {
+                if (a[i] != '')
+                    count += 1
+            }
+            console.log(a)
+            console.log(count)
+            return count;
+
+        }
+        let word = prompt("Enter a sentence")
+        document.write(countWord(word))
+    </script>
+</body>
+
+</html>
