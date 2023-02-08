@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Number</title>
+</head>
+
+<body>
+    <script>
+        // Option 1
+        // Using hashing
+        function getMissingNumber(arr, n) {
+
+            let temp = [];  // its size is n+1.
+            for (let i = 0; i <= n; i++) {
+                temp[i] = 0
+            }
+
+// during the second loop, for the missing No not assign 1
+            for (let i = 0; i < n; i++) {
+                
+                temp[arr[i] - 1] = 1 // ar contains the natural number (1,n)
+            }
+            let ans = 0;
+            for (let i = 0; i <n; i++) {
+                if (temp[i] == 0)
+                    ans = i + 1;
+            }
+           return ans
+        }
+        // Option 2 === the most efficient 
+        // using the first Natural number sum
+
+       function missingNumber(arr, n) {
+            let i, total=1, N=n+1;
+            for(i=2; i<=N; i++){
+                 total+=i; // sum of the the first natural number
+                total-=arr[i-2]; // subtract the available number
+            }
+            console.log(total)
+            return total;
+        }
+        // Driver code
+        let arr=[1,5,3,4,6]
+        let n=arr.length
+       document.write( getMissingNumber(arr, n)) 
+       document.write("<br>")
+       document.write(missingNumber(arr, n)) 
+
+
+    
+    </script>
+</body>
+
+</html>
