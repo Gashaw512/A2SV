@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Factorial</title>
+</head>
+<body>
+    <script>
+        function factorial(num){
+            if ( num==0){
+                return 1;
+            }
+            else
+            return (num*(factorial(num-1)))
+        }
+        let num=parseInt(prompt("Enter Number"))
+        document.write(factorial(num))
+    </script>
+</body>
+</html>
